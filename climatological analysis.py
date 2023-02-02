@@ -10,14 +10,13 @@ import pandas as pd
 import scipy as sp
 import matplotlib.pyplot as plt
 from scipy.signal import find_peaks as fp
-import glob as gb
 
 # label the columns in the data
 column_labels = ['years', 'months', 'days', 'precipitation']
 
 # read data as a frame from location
 data = df = pd.read_csv(
-    "C:/Users/micha/OneDrive/Desktop/Rainfall Analysis Publication/Synopdata/Ho_1960_2020_dRR_cgf.txt",
+    "file path",
     header=None, sep='\s+', names=column_labels)
 
 # create a new column frame, date, to easily analyse and group data by preferred time-base
@@ -55,10 +54,14 @@ plt.ylabel("Cumulative anomaly")
 ax = plt.subplot()
 ax.plot(cumulative_anomaly)
 
-# ax.plot(cumulative_anomaly.iloc[:190].idxmin(
-# ), cumulative_anomaly[cumulative_anomaly.iloc[:190].idxmin()], 'ro')
-# ax.plot(cumulative_anomaly.iloc[190:320].idxmin(
-# ), cumulative_anomaly[cumulative_anomaly.iloc[190:320].idxmin()], 'ro')
+#finding the onset and cessation
+
+#Alternative One 
+#this idea is to seperate the data into two parts based on the understanding of the weather of that location
+ax.plot(cumulative_anomaly.iloc[:190].idxmin(
+ ), cumulative_anomaly[cumulative_anomaly.iloc[:190].idxmin()], 'ro')
+ax.plot(cumulative_anomaly.iloc[190:320].idxmin(
+ ), cumulative_anomaly[cumulative_anomaly.iloc[190:320].idxmin()], 'ro')
 
 anomaly = cumulative_anomaly.values
 dx = 28
@@ -80,14 +83,8 @@ min_index = cumulative_anomaly.idxmin()
 
 print(onset, cessation)
 
-open("C:/Users/micha/OneDrive/Desktop/Rainfall Analysis Publication/text files/climatological cumulative/oac.txt", 'w')
+#writing the cumulative anomaly into a file
+df.to_csv("file path", format)
 
-#print(onset, cessation)
-# writing the cumulative anomaly into a file
-
-
-# df.to_csv("C:/Users/micha/OneDrive/Desktop/Rainfall Analysis Publication/text files/climatological cumulative/sudan.txt",
-#                     sep=',', index=False)
-
-# saving the images
-#plt.savefig("C:/Users/micha/OneDrive/Desktop/Rainfall Analysis Publication/images/climatological zones/Sudan.jpg")
+#saving the images
+plt.savefig("file path")
