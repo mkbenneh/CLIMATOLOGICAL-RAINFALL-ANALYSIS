@@ -80,6 +80,7 @@ Accra - 1991 Cessation: Day 302.0
 Accra - 2031 Onset: Day 135.0
 Accra - 2031 Cessation: Day 304.0
 Ada - 1960 Onset: Day 93.0
+Ada - 1960 Onset: Day 287.0
 Ada - 1960 Cessation: Day 193.0
 Ada - 1960 Cessation: Day 300.0
 Ada - 1991 Onset: Day 90.0
@@ -133,6 +134,7 @@ Tema - 1960 Onset: Day 268.0
 Tema - 1960 Cessation: Day 193.0
 Tema - 1960 Cessation: Day 300.0
 Tema - 1991 Onset: Day 88.0
+Tema - 1991 Onset: Day 290.0
 Tema - 1991 Cessation: Day 186.0
 Tema - 1991 Cessation: Day 302.0
 Tema - 2031 Onset: Day 133.0
